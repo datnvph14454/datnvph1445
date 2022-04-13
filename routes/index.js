@@ -3,6 +3,7 @@ var router = express.Router();
 
 var db = 'mongodb+srv://nvdatqaz:Nvdat25092002@cluster0.6pgjw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const mongoose = require('mongoose');
+const fs = require("fs");
 const {Schema} = mongoose;
 mongoose.connect(db).catch(error => {
     if (error) {
@@ -58,15 +59,23 @@ router.get('/sua', async function (req, res, next) {
     res.render('sua', {id: id});
 });
 
-router.get('/car', function (req, res, next) {
-    console.log("vao trang o to")
-    var data = 'Xin chao kiem tra thu'
+router.get('/them', function (req, res, next) {
 
-    var mang = [3, 4, 5, 4, 3, 3, 5, 6, 7, 56, 5]
 
-    var sinhVien = {name: 'Huy Nguyen', tuoi: 33}
+    res.render('them', {title: 'Express'});
+});
+router.get('/support', function (req, res, next) {
 
-    res.render('car', {title: 'Express', duLieu: data, mangSo: mang, student: sinhVien});
+
+    res.render('support' )
+});
+router.post('/support', async function (req, res) {
+
+
+// câu lệnh cập nhật
+
+    res.render('support' )
+
 });
 
 
@@ -81,7 +90,7 @@ router.post('/insertUser', function (req, res) {
     //     <input name="password" placeholder="Nhap password cua ban">
     var password = req.body.password;
 
-    console.log(email + " - " + firstName + " - " + lastName + "  -  " + password)
+
     var data = email + " - " + firstName + " - " + lastName + "  -  " + password
 
     // viet cau lenh them
