@@ -112,8 +112,8 @@ router.post('/insertUser', function (req, res) {
         if (error) {
             res.render('index', {message: "Them KO thanh cong  " + error.message})
         } else {
-            res.render('index', {message: " "
-                 })
+
+            res.redirect('/');
         }
     })
 
@@ -123,13 +123,13 @@ router.post('/updateSinhVien', async function (req, res) {
 
     var id = req.body.id;
 
-    //     <input name="email" placeholder="Nhap email cua ban">
+
     var email = req.body.email;
-    //     <input name="firstName" placeholder="Nhap First Name cua ban">
+
     var firstName = req.body.firstName;
-    //     <input name="lastName" placeholder="Nhap LastName cua ban">
+
     var lastName = req.body.lastName;
-    //     <input name="password" placeholder="Nhap password cua ban">
+
     var password = req.body.password;
 
 
